@@ -1,1 +1,1 @@
-demo: https://ilark-platform.github.io/daab_publisher/
+demo: https://dev-jtkim.github.io/etri_publisher/
