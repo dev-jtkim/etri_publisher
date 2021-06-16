@@ -1,7 +1,7 @@
 @charset "utf-8";
 @import url('http://fonts.googleapis.com/earlyaccess/notosanskr.css)');
 
-html{width:100%; }
+html{width:100%;}
 body{width:100%;height:100%;background: #F4F7FD;color:#3E4135;font-size:13px;letter-spacing:-0.1px;font-family:'Noto Sans KR', sans-serif;-webkit-font-smoothing: antialiased;-webkit-text-size-adjust:none}
 body,section,article,aside,footer,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,select,textarea,p,blockquote,th,td,legend,button{margin:0;padding:0;font-family:'Noto Sans KR', sans-serif;webkit-text-size-adjust:none;word-break:keep-all;box-sizing: border-box;}
 section,nav,article,aside,hgroup,header,footer,iframe{display:block}
