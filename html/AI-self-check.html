@@ -29,6 +29,19 @@
 					<div class="side__menu-list__close">
 						<span class="close"></span>
 					</div>
+                    <!-- LNB 개인정보 영역 -->
+					<div class="header_myinfo">
+						<div class="header-profile">
+							<img src="images/dummy-profile.jpg" class="profile-photo">
+							<div class="emergency"><span class="dot red"></span>주시대상</div><!-- 주시대상 상태에 따라 추가 -->
+						</div>
+						<div class="profile-info">
+							<span>홍길동</span>ID : 776</a>
+							<div>타이어 성형 2팀 | A08</div>
+							<a href="#">Logout</a><a href="#">Setting</a>
+						</div>
+					</div>
+					<!--// LNB 개인정보 영역 -->
 					<!-- menu -->
 					<div class="side__menu-list">
 						<button class="accordion">사고관리</button>
@@ -56,10 +69,33 @@
 				</div>
 			</div>
 		</div>
+
 		
+	<!--긴급사고 알림 snackbar -->
+		<div id="snackbar">
+			<span onclick="this.parentElement.style.display='none';" class="ly_pop-close"></span>
+			<h2>긴급사고 / 주의상황 알림</h2>
+				<div class="ly_emerg_con">
+					<span class="icon-emerg"></span>
+					<span>
+					타이어 적재 작업구역에서<br>
+					<strong>지게차(ID번호) 충돌 사고가 발생</strong>했습니다.
+					<h4 class="mgt1">
+						2021-01-01 15:23:41 <strong>운전자 : 홍길동</strong>
+					</h4>
+					<button type="button" class="btn-small second-btn mgt1">자세히 보기</button>
+				</span>
+				</div>
+			<div class="btn-wrap">
+				<button type="button" class="btn-large line-darkgray-btn">이동</button>
+				<button type="button" class="btn-large red-btn">다음알림</button>
+			</div>
+		</div>
+	<!--//긴급사고 알림 snackbar -->
+
 		<div class="header__utility">
-			<a href="#" class="icon-alret"><span class="dot red">5</span></a>
-			<a href="#" class="icon-mail"><span class="dot green"></span></a>
+			<a href="#" class="icon-alret" onclick="snackFunction()"><span class="dot red">5</span></a>
+			<a href="#" class="icon-mail"><span class="dot green">2</span></a>
 			<span class="user-info">
 				<a href="#" onclick="myFunction_userInfo()"><img src="images/dummy-profile.jpg"><span>홍길동</span> 안전관리자</a>
 				<div id="myDropdown" class="profile-container">
@@ -161,7 +197,7 @@
 							<tbody>
 								<tr>
 									<td>1</td>
-									<td><a href="#" class="worker-name"><img src="images/dummy-profile.jpg" class="profile-photo"><strong>홍길동</strong></a></td>
+									<td><a href="#" class="worker-name photo-dot"><img src="images/dummy-profile.jpg" class="profile-photo"><strong>홍길동</strong></a></td><!-- 프로필사진에 선택점 추가시 class=photo-dot -->
 									<td>안전지수<div class="num">20점</div></td>
 									<td><button type="button" class="red-btn btn-small">주시중</button></td>
 									<td><button onclick="document.getElementById('layerPop').style.display='block'" type="button" class="gray-btn btn-small">메시지 발송</button></td>
@@ -264,7 +300,7 @@
 						<td><span>열람</span></td>
 						<td><span>Y</span></td>
 						<td><span>Y</span></td>
-						<td><span class="dot gray"></span>미평가</td><!-- 미평가 일 경우 dot 색상 class=gray, 작성완료일 경우 class=green -->
+						<td><div class="chip-staus"><span class="dot gray"></span>미평가</div></td><!-- 미평가 일 경우 dot 색상 class=gray, 작성완료일 경우 class=blue -->
 					</tr>
 					<tr>
 						<td><span>1</span></td>
@@ -275,7 +311,7 @@
 						<td><span>열람</span></td>
 						<td><span>Y</span></td>
 						<td><span>Y</span></td>
-						<td><span class="dot green"></span>작성완료</td>
+						<td><div class="chip-staus"><span class="dot blue"></span>작성완료</div></td>
 					</tr>
 					<tr>
 						<td><span>1</span></td>
@@ -286,7 +322,7 @@
 						<td><span>열람</span></td>
 						<td><span>Y</span></td>
 						<td><span>Y</span></td>
-						<td><span class="dot gray"></span>미평가</td>
+						<td><div class="chip-staus"><span class="dot gray"></span>미평가</div></td>
 					</tr>
 					<tr>
 						<td><span>1</span></td>
@@ -297,7 +333,7 @@
 						<td><span>열람</span></td>
 						<td><span>Y</span></td>
 						<td><span>Y</span></td>
-						<td><span class="dot gray"></span>미평가</td>
+						<td><div class="chip-staus"><span class="dot gray"></span>미평가</div></td>
 					</tr>
 				</tbody>
 				</table>
