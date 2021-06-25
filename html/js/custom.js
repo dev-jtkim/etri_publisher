@@ -147,7 +147,6 @@ function closeAllSelect(elmnt) {
     }
   }
 }
-
 document.addEventListener("click", closeAllSelect);
 
 
@@ -156,7 +155,6 @@ function myFunction() {
 	var popup = document.getElementById("cardPopup");
 	popup.classList.toggle("show");
 }
-
 
 
 /* tab */
@@ -174,7 +172,6 @@ function openCity(evt, cityName) {
   evt.currentTarget.className += " active";
 }
 tabcontent = document.getElementById("defaultOpen").click();
-
 //document.getElementById("defaultOpen").click();
 
 
@@ -213,4 +210,80 @@ btn.on('click', function(e) {
   $('html, body').animate({scrollTop:0}, '300');
 });
 
+/* swiper */
+var swiper = new Swiper(".messageSort", {
+  slidesPerView: 2,
+  spaceBetween: 5,
+  grabCursor: true,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+});
 
+
+/* message table */
+$(function () {
+  var $tableRowEls = $('.msg-container tr'),
+      $tableRowCheckBoxEls = $(".msg-container input[type='checkbox']"),
+      $itemSelectedDivEl = $('.msg-table-select-control'),
+      $itemSelectedCheckBoxEl = $(".msg-table-select-control input[type='checkbox']"),
+      $selectedItemNumSpanEl = $('.msg-table-select-control__selected-item-num'),
+      $dropdownBtnDivEl = $('.msg-table-control__buttons__dropdown-button'),
+      $dropdownListDivEl = $('.msg-table-control__buttons__dropdown-list'),
+      selectedItemNum = 0;
+
+  // table select control 의 checkbox 선택
+  $itemSelectedCheckBoxEl.on('change', function(e) {
+      if (!$(this).prop('checked')){
+          $tableRowEls.removeClass('msg-table__row--selected');
+
+          // 모든 table row checkbox 의 check 해제
+          $tableRowCheckBoxEls.prop('checked', false);
+          selectedItemNum = 0;
+          $itemSelectedDivEl.removeClass('msg-table__row--selected')
+      }
+  });
+
+  // table row checkbox 선택
+  $tableRowCheckBoxEls.on('change', function(e){
+      var $checkBoxEl = $(this),
+          index = $tableRowCheckBoxEls.index(this);
+
+      if (index !== 0) {
+          if ($checkBoxEl.prop('checked')) {
+              $tableRowEls.eq(index).addClass('msg-table__row--selected');
+              selectedItemNum++;
+          } else {
+              $tableRowEls.eq(index).removeClass('msg-table__row--selected');
+              selectedItemNum--;
+          }
+      } else {
+          if ($checkBoxEl.prop('checked')) {
+              $tableRowEls.addClass('msg-table__row--selected');
+              $tableRowCheckBoxEls.prop('checked', true);
+              selectedItemNum = $tableRowEls.length - 1;
+          } else {
+              $tableRowEls.removeClass('msg-table__row--selected');
+              $tableRowCheckBoxEls.prop('checked', false);
+              selectedItemNum = 0;
+          }
+      }
+
+      if (selectedItemNum === $tableRowEls.length - 1){
+          $tableRowEls.eq(0).addClass('msg-table__row--selected');
+          $tableRowCheckBoxEls.eq(0).prop('checked', true);
+      } else {
+          $tableRowEls.eq(0).removeClass('msg-table__row--selected');
+          $tableRowCheckBoxEls.eq(0).prop('checked', false);
+      }
+
+      if (selectedItemNum > 0) {
+          $itemSelectedDivEl.addClass('msg-table__row--selected');
+          $itemSelectedCheckBoxEl.prop('checked', true);
+          $selectedItemNumSpanEl.text(selectedItemNum)
+      } else {
+          $itemSelectedDivEl.removeClass('msg-table__row--selected');
+      }
+  });
+});
