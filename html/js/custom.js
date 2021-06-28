@@ -287,3 +287,14 @@ $(function () {
       }
   });
 });
+
+
+/* 비밀번호 보이기 */
+function myFunction() {
+  var x = document.getElementById("myInput");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
