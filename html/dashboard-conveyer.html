@@ -7,8 +7,24 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <link rel="stylesheet" href="css/custom.css">
-
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/custom.css">	
+        <!-- Demo styles -->
+        <style>
+      
+            .swiper-container {
+              width: 100%;
+              height: 100%;
+            }
+      
+            
+            .swiper-slide img {
+              display: block;
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          </style>
 </head>
 
 <body class="dashboard__section">
@@ -98,6 +114,11 @@
 		<div class="f-left">
 			<span class="today">2021-06-01 월요일</span>
 			<span class="noday">무재해 <strong>71</strong>일</span>
+            <!--0704 수정 : AI 리포트 버튼추가 -->
+			<div class="emerg mgl1">
+				<a href="#" class="aiReport">AI 리포트</a>
+			</div>
+			<!--// 0704 수정 : AI 리포트 버튼추가 -->
 		</div>
 		<div class="f-right">
 			<div class="emerg">
@@ -125,14 +146,12 @@
 			</div>
 			<div class="dashboard__area--right">
 				<div class="map__option">
-					<div class="custom-select" style="width:260px;">
-						<select>
-						  <option value="0">작업 구역을 선택하세요.</option>
-						  <option value="1">A구역</option>
-						  <option value="2">A구역</option>
-						  <option value="3">A구역</option>
-						</select>
-					</div>
+					<select>
+					  <option value="0">작업 구역을 선택하세요.</option>
+					  <option value="1">A구역</option>
+					  <option value="2">A구역</option>
+					  <option value="3">A구역</option>
+					</select>
 					<span class="chip">긴급 <strong>12</strong></span>
 					<span class="chip warning">주의 <strong>2</strong></span>
 
@@ -193,6 +212,7 @@
                                 </div>
                             </span>
                         </div>
+				
                         <div class="card__popup">
                             <span class="popuptext">
                                 <div class="card__popup--header">
@@ -258,18 +278,80 @@
                                         </div>
                                     </div>
                                 </div>
+								
+								
+								<!-- Swiper :: vod-->
                                 <div class="conveyer-vod">
-                                    <div>
-                                        <h4>운영기기 카메라 ID (이름)</h4>
-                                        <div>
-                                            <iframe width="100%" height="150" src="https://www.youtube.com/embed/gmp1W6TrbmE?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    <div class="swiper-container dashboard-vod">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <div class="vod-set">
+                                                    <h4>운영기기 카메라 ID (이름)</h4>
+                                                    <iframe width="100%" height="150" src="https://www.youtube.com/embed/gmp1W6TrbmE?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <div class="vod-set">
+                                                    <h4>운영기기 카메라 ID (이름)</h4>
+                                                    <!-- iframe 높이 height="150" -->
+                                                    <iframe width="100%" height="150" src="https://www.youtube.com/embed/gmp1W6TrbmE?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-button-next"></div>
+                                        <div class="swiper-button-prev"></div>
+                                        <div class="swiper-pagination"></div>
+                                    </div>
+                                </div>
+
+                            </li>
+                            <li>
+                                <div class="conveyer-info">
+                                    <div class="conveyer-detail">
+                                        <span class="worker-detail-name">컨베이어벨트 식별 ID(이름)</span>
+                                        <span class="worker-detail-location">타이어 적재 작업 구역</span>
+                                        <span class="worker-detail-safeAverage">누적평균 안전지수<span>88%</span></span>
+                                    </div>
+                                    <div class="conveyer-state">
+                                        <div class="today-safeAverage">
+                                            <div class="total">오늘 긴급(중대)사고<strong>1건</strong></div>
+                                            <div>
+                                                <span class="today-state">오늘 주의상황</span>
+                                                <dl class="state_box"> 
+                                                    <dt>위험레벨2</dt><dd>31건</dd>
+                                                    <dt>돌발위험행동</dt><dd>11건</dd>
+                                                    <dt>위험레벨4</dt><dd>31건</dd>
+                                                    <dt>위험거리접근</dt><dd>11건</dd>
+                                                </dl>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div>
-                                        <h4>운영기기 카메라 ID (이름)</h4>
-                                        <div>
-                                            <iframe width="100%" height="150" src="https://www.youtube.com/embed/gmp1W6TrbmE?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+
+                                <!-- Swiper :: vod-->
+                                <div class="conveyer-vod">
+                                    <div class="swiper-container dashboard-vod">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <div class="vod-set">
+                                                    <h4>운영기기 카메라 ID (이름)</h4>
+                                                    <iframe width="100%" height="150" src="https://www.youtube.com/embed/gmp1W6TrbmE?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                </div>
+                                            </div>
                                         </div>
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <div class="vod-set">
+                                                    <h4>운영기기 카메라 ID (이름)</h4>
+                                                    <iframe width="100%" height="150" src="https://www.youtube.com/embed/gmp1W6TrbmE?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-button-next"></div>
+                                        <div class="swiper-button-prev"></div>
+                                        <div class="swiper-pagination"></div>
                                     </div>
                                 </div>
                             </li>
@@ -295,55 +377,28 @@
                                         </div>
                                     </div>
                                 </div>
+                                <!-- Swiper :: vod-->
                                 <div class="conveyer-vod">
-                                    <div>
-                                        <h4>운영기기 카메라 ID (이름)</h4>
-                                        <div>
-                                            <iframe width="100%" height="150" src="https://www.youtube.com/embed/gmp1W6TrbmE?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <h4>운영기기 카메라 ID (이름)</h4>
-                                        <div>
-                                            <iframe width="100%" height="150" src="https://www.youtube.com/embed/gmp1W6TrbmE?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="conveyer-info">
-                                    <div class="conveyer-detail">
-                                        <span class="worker-detail-name">컨베이어벨트 식별 ID(이름)</span>
-                                        <span class="worker-detail-location">타이어 적재 작업 구역</span>
-                                        <span class="worker-detail-safeAverage">누적평균 안전지수<span>88%</span></span>
-                                    </div>
-                                    <div class="conveyer-state">
-                                        <div class="today-safeAverage">
-                                            <div class="total">오늘 긴급(중대)사고<strong>1건</strong></div>
-                                            <div>
-                                                <span class="today-state">오늘 주의상황</span>
-                                                <dl class="state_box"> 
-                                                    <dt>위험레벨2</dt><dd>31건</dd>
-                                                    <dt>돌발위험행동</dt><dd>11건</dd>
-                                                    <dt>위험레벨4</dt><dd>31건</dd>
-                                                    <dt>위험거리접근</dt><dd>11건</dd>
-                                                </dl>
+                                    <div class="swiper-container dashboard-vod">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <div class="vod-set">
+                                                    <h4>운영기기 카메라 ID (이름)</h4>
+                                                    <iframe width="100%" height="150" src="https://www.youtube.com/embed/gmp1W6TrbmE?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="conveyer-vod">
-                                    <div>
-                                        <h4>운영기기 카메라 ID (이름)</h4>
-                                        <div>
-                                            <iframe width="100%" height="150" src="https://www.youtube.com/embed/gmp1W6TrbmE?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <div class="vod-set">
+                                                    <h4>운영기기 카메라 ID (이름)</h4>
+                                                    <iframe width="100%" height="150" src="https://www.youtube.com/embed/gmp1W6TrbmE?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div>
-                                        <h4>운영기기 카메라 ID (이름)</h4>
-                                        <div>
-                                            <iframe width="100%" height="150" src="https://www.youtube.com/embed/gmp1W6TrbmE?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                        </div>
+                                        <div class="swiper-button-next"></div>
+                                        <div class="swiper-button-prev"></div>
+                                        <div class="swiper-pagination"></div>
                                     </div>
                                 </div>
                             </li>
@@ -354,6 +409,26 @@
 		</div>
 	</div>
 </div>
+
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+var swiper = new Swiper(".dashboard-vod", {
+        slidesPerView: 2,
+        spaceBetween: 20,
+        slidesPerGroup: 2,
+        loop: true,
+        loopFillGroupWithBlank: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+});
+</script>
 
 <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 <script src="js/custom.js"></script>

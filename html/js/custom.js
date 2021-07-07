@@ -151,7 +151,7 @@ document.addEventListener("click", closeAllSelect);
 
 
 /* card popup */
-function myFunction() {
+function myFunction_card() {
 	var popup = document.getElementById("cardPopup");
 	popup.classList.toggle("show");
 }

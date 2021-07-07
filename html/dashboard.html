@@ -98,6 +98,11 @@
 		<div class="f-left">
 			<span class="today">2021-06-01 월요일</span>
 			<span class="noday">무재해 <strong>71</strong>일</span>
+			<!--0704 수정 : AI 리포트 버튼추가 -->
+			<div class="emerg mgl1">
+				<a href="#" class="aiReport">AI 리포트</a>
+			</div>
+			<!--// 0704 수정 : AI 리포트 버튼추가 -->
 		</div>
 		<div class="f-right">
 			<div class="emerg">
@@ -125,14 +130,12 @@
 			</div>
 			<div class="dashboard__area--right">
 				<div class="map__option">
-					<div class="custom-select" style="width:260px;">
-						<select>
-						  <option value="0">작업 구역을 선택하세요.</option>
-						  <option value="1">A구역</option>
-						  <option value="2">A구역</option>
-						  <option value="3">A구역</option>
-						</select>
-					</div>
+					<select>
+					  <option value="0">작업 구역을 선택하세요.</option>
+					  <option value="1">A구역</option>
+					  <option value="2">A구역</option>
+					  <option value="3">A구역</option>
+					</select>
 					<span class="chip">긴급 <strong>12</strong></span>
 					<span class="chip warning">주의 <strong>2</strong></span>
 
@@ -155,8 +158,44 @@
 						</label>
 					</div>
 				</div>
+				
 				<div class="map__area">
-					<div class="card__popup" onclick="myFunction()" >
+
+					<!-- map 가이드 툴팁-->
+					<div class="tooltip_map_wrap">
+						<div class="tooltip__map">
+							<div class="tooltiptext">
+								<div class="map_guide_wrap">
+									<ul class="col3">
+										<li><span class="db_icon worker"></span><div>작업자</div></li>
+										<li><span class="db_icon forklift"></span><div>지게차</div></li>
+										<li><span class="db_icon conveyor"></span><div>컨베이어<br>벨트</div></li>
+									</ul>
+									<ul class="col2">
+										<li><span class="dot blue"></span>정상</li>
+										<li><span class="dot green"></span>주시대상</li>
+										<li><span class="dot orange"></span>주의상황</li>
+										<li><span class="dot red"></span>긴급사고</li>
+									</ul>
+									<div class="line"></div>
+									<ul class="col3">
+										<li class="w100">위치고정형 운영기기</li>
+										<li><span class="db_icon cctv"></span></li>
+										<li><span class="db_icon sensor"></span></li>
+										<li><span class="db_icon sensor02"></span></li>
+									</ul>
+									<ul class="col2">
+										<li><span class="dot blue"></span>정상</li>
+										<li><span class="dot red"></span>장애발생</li>
+										<li class="w100"><span class="dot orange"></span>점검중(수리/교체)</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- //map 가이드 툴팁-->
+					
+					<div class="card__popup" onclick="myFunction_card()" >
 						<div class="db_icon worker-red"></div><!--작업자 아이콘 상태별 클래스 - 심각 worker-red/ 위험 worker-orange / 주의 worker-blue / 정상 worker-green -->
 						<span class="popuptext" id="cardPopup"><!--작업자 팝업 card -->
 							<div class="card__popup--header">
@@ -168,6 +207,7 @@
 								<div class="card__popup--detail">
 									<span>홍길동</span>안전관리자</a>
 								</div>
+								<a href="#" class="card__popup--button icon-phone"></a>
 								<a href="#" class="card__popup--button icon-eye"></a>
 								<a href="#" class="card__popup--button icon-push-message"></a>
 							</div>
@@ -177,7 +217,8 @@
 							</div>
 						</span>
 					</div>
-					<div class="card__popup" onclick="myFunction()">
+
+					<div class="card__popup" onclick="myFunction_card()">
 						<div class="db_icon forklift-green"></div><!--지게차 아이콘 상태별 클래스 - 심각 forklift-red/ 위험 forklift-orange / 주의 forklift-blue / 정상 forklift-green -->
 						<span class="popuptext" id="cardPopup111"><!--지게차 팝업 card -->
 							<div class="card__popup--header">
@@ -204,7 +245,7 @@
 							</div>
 						</span>
 					</div>
-					<div class="card__popup" onclick="myFunction()">
+					<div class="card__popup" onclick="myFunction_card()">
 						<div class="db_icon conveyor-green"></div><!--컨베이어 아이콘 상태별 클래스 - 심각 conveyor-red/ 위험 conveyor-orange / 주의 conveyor-blue / 정상 conveyor-green -->
 						<span class="popuptext" id="cardPopup111"><!--컨베이어 팝업 card -->
 							<div class="card__popup--header">
