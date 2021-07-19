@@ -62,6 +62,7 @@ htmlFiles.forEach(item => {
     tbody.appendChild(tr)
 })
 
+/*
 htmlCustomerFiles.forEach(item => {
     const tr = document.createElement('tr')
 
@@ -80,6 +81,6 @@ htmlCustomerFiles.forEach(item => {
 
     tbody.appendChild(tr)
 })
-
+*/
 
 fs.writeFileSync(`./index.html`, dom.serialize())
