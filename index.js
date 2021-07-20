@@ -8,7 +8,7 @@ function info (name) {
 }
 
 const htmlDir = './html'
-// const htmlCustomerDir = './APP_html'
+const htmlCustomerDir = './APP_html'
 
 const htmlFiles = fs.readdirSync(htmlDir).filter(item => {
     return item.match(/.+\.html$/)
@@ -18,7 +18,7 @@ const htmlFiles = fs.readdirSync(htmlDir).filter(item => {
         info: info(name)
     }
 })
-/*
+
 const htmlCustomerFiles = fs.readdirSync(htmlCustomerDir).filter(item => {
     return item.match(/.+\.html$/)
 }).map(name => {
@@ -27,7 +27,7 @@ const htmlCustomerFiles = fs.readdirSync(htmlCustomerDir).filter(item => {
         info: info(name)
     }
 })
-*/
+
 const template = fs.readFileSync('./template.html')
 const dom = new JSDOM(template.toString())
 
@@ -62,7 +62,7 @@ htmlFiles.forEach(item => {
     tbody.appendChild(tr)
 })
 
-/*
+
 htmlCustomerFiles.forEach(item => {
     const tr = document.createElement('tr')
 
@@ -81,6 +81,6 @@ htmlCustomerFiles.forEach(item => {
 
     tbody.appendChild(tr)
 })
-*/
+
 
 fs.writeFileSync(`./index.html`, dom.serialize())
