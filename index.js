@@ -69,7 +69,7 @@ htmlCustomerFiles.forEach(item => {
     const filename = td()
     const anchor = document.createElement('a')
     anchor.innerHTML = item.name
-    anchor.setAttribute('href', `./html/${item.name}`)
+    anchor.setAttribute('href', `./APP_html/${item.name}`)
     filename.appendChild(anchor)
 
     const format = 'YYYY/MM/DD hh:mm'
