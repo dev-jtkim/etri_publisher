@@ -15,7 +15,7 @@
 
 <div class="wrap">
 	<!-- header -->
-    <div class="header">
+    <div class="header m-hidden">
 		<div class="header__title">
 			<span>한국타이어 대전공장 안전관리시스템</span>
 		</div>
@@ -108,7 +108,7 @@
 			</span>
 		</div>
     </div>
-	<div class="header__sub">
+	<div class="header__sub m-hidden">
 		<div class="f-left">
 			<span class="today">2021-06-01 월요일</span>
 			<span class="noday">무재해 <strong>71</strong>일</span>
@@ -284,7 +284,7 @@
 <div id="layerPop-mgm-detail" class="modal m-full"><!-- 모달창이 모바일에서 전체로 열릴 경우 class=m-full 추가 -->
     <div class="ly_pop_container width-middle">
         <span onclick="document.getElementById('layerPop-mgm-detail').style.display='none'" class="ly_pop-close"></span>
-        <h2>상세정보 안전점검</h2>
+        <h2>상세정보 | 안전점검</h2><!--07/08 세로 구분선 추가 -->
 		<div class="ly_contents">
 			<div class="tab">
 				<button class="tablinks active" onclick="openCity(event, 'operate_detail_info')">상세정보</button>
@@ -508,7 +508,7 @@
 										<div class="swiper-slide"><a href="#" class="chip-sort">폐기 <strong>123</strong></a></div>
 									</div>
 								</div>
-								<button type="button" onclick="document.getElementById('layerPop-operateEnroll').style.display='block'" class="m-hidden primary-btn btn-large">운영기기 등록</button>
+								<button type="button" onclick="document.getElementById('layerPop-operateEnroll').style.display='block'" class="m-hidden w20 primary-btn btn-large">운영기기 등록</button><!--07/08 버튼 크기 지정 class=w20 추가 -->
 							</div>
 							
 							<button class="accordion mgt1">검색필터</button>
@@ -520,7 +520,7 @@
 												<h3>운영기기종류
 													<div class="f-right">
 														<button type="button" class="btn-small line-gray-btn">전체선택</button>
-														<button type="button" class="btn-small line-gray-btn">전체삭제</button>
+														<button type="button" class="btn-small line-gray-btn">선택해제</button>
 													</div>
 												</h3>
 												<label class="custom-checkbox">CCTV(1300)
@@ -545,7 +545,7 @@
 												<h3>상태
 													<div class="f-right">
 														<button type="button" class="btn-small line-gray-btn">전체선택</button>
-														<button type="button" class="btn-small line-gray-btn">전체삭제</button>
+														<button type="button" class="btn-small line-gray-btn">선택해제</button>
 													</div>
 												</h3>
 												<label class="custom-checkbox">운영중(n)
@@ -569,7 +569,7 @@
 												<h3>센서위치
 													<div class="f-right">
 														<button type="button" class="btn-small line-gray-btn">전체선택</button>
-														<button type="button" class="btn-small line-gray-btn">전체삭제</button>
+														<button type="button" class="btn-small line-gray-btn">선택해제</button>
 													</div>
 												</h3>
 												<label class="custom-checkbox">제 1성형파트
@@ -692,8 +692,11 @@
                         <!--운영기기 status 통계-->
                         <div class="right mgt2">
                             <div class="titTypeB">운영기기 status 통계</div>
-							<div class="mgt2">
-								<img src="images/sample-graph.png" class="w100">
+							<div class="mgt2 tC">
+								<img src="images/line-graph.gif" style="width:80%">
+							</div>
+							<div class="mgt2 tC">
+								<img src="images/bar-graph.gif" style="width:80%">
 							</div>
                         </div>
                     </div>
@@ -709,16 +712,13 @@
 			<div class="search__box">
 				<ul class="">
 					<li class="w100">
-						<input type="text" class="w40" placeholder="작성자">
-						<div class="calendar-picker w40 mgl1">
+						<input type="text" class="w30" placeholder="작성자"><!--07/08 검색버튼 삭제 및 입력폼 크기 변경(w40 -> w30) -->
+						<div class="calendar-picker w30 mgl1">
 							<input type="text" placeholder="점검날짜">
 							<button type="button" class="icon-calendar"></button>
 						</div>
 					</li>
 				</ul>
-				<span class="search__box--button">
-					<button type="button" class="line-primary-btn btn-large">Search</button>
-				</span>
 			</div>
 			<div class="titTypeA mgt1">
 				OP0111 <span class="primary">CCTV</span>
@@ -779,16 +779,13 @@
 			<div class="search__box">
 				<ul class="">
 					<li class="w100">
-						<input type="text" class="w40" placeholder="작성자">
-						<div class="calendar-picker w40 mgl1">
+						<input type="text" class="w30" placeholder="작성자">
+						<div class="calendar-picker w30 mgl1">
 							<input type="text" placeholder="작성날짜">
 							<button type="button" class="icon-calendar"></button>
 						</div>
 					</li>
 				</ul>
-				<span class="search__box--button">
-					<button type="button" class="line-primary-btn btn-large">Search</button>
-				</span>
 			</div>
 			<div class="titTypeA mgt1">
 				OP0111 <span class="primary">CCTV</span>
@@ -802,13 +799,13 @@
 						<tr>
 							<th>작동상태</th>
 							<td>
-								<textarea rows="2"></textarea>
+								<textarea rows="2" disabled>작동하지 않음</textarea>
 							</td>
 						</tr>
 						<tr>
 							<th>원인</th>
 							<td class="tR">
-								<textarea rows="2"></textarea>
+								<textarea rows="2" disabled>렌즈파손</textarea>
 								<div class="mgt1 d-flex j-content-between">첨부 파일명.pdf <button type="button" class=" btn-small second-btn">파일첨부</button>
 								</div>
 							</td>
@@ -816,9 +813,15 @@
 						<tr>
 							<th>해결</th>
 							<td>
-								<textarea rows="2"></textarea>
+								<textarea rows="2" disabled>교체결정</textarea>
 							</td>
 						</tr>
+					</tbody>
+				</table>
+				<!--07/08 테이블 내 2개 항목 분리 -->
+				<table class="mgt2">
+					<colgroup><col style="width:20%"><col style="width:70%"></colgroup>
+					<tbody>
 						<tr>
 							<th>처리내용</th>
 							<td>
@@ -876,7 +879,7 @@
 			</div>
 			<!--기기별 주요이슈 tab -->
 			<div id="operate_statistics_graph03" class="tabcontent clearfix mgt1 tC">
-				<img src="images/sample-graph.png" class="w50">
+				<img src="images/bar-graph.gif" class="w50">
  			</div>
 		</div>
 		<div class="btn-wrap">

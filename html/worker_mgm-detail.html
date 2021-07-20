@@ -15,7 +15,7 @@
 
 <div class="wrap">
 	<!-- header -->
-    <div class="header">
+    <div class="header m-hidden">
 		<div class="header__title">
 			<span>한국타이어 대전공장 안전관리시스템</span>
 		</div>
@@ -108,7 +108,7 @@
 			</span>
 		</div>
     </div>
-	<div class="header__sub">
+	<div class="header__sub m-hidden">
 		<div class="f-left">
 			<span class="today">2021-06-01 월요일</span>
 			<span class="noday">무재해 <strong>71</strong>일</span>
@@ -149,7 +149,7 @@
 								<ul class="col3">
 									<div class="d-flex j-content-between">
 										<div class="titTypeC">작업자 정보</div>
-										<button onclick="document.getElementById('layerPop').style.display='block'" type="button" class="m-hidden gray-btn btn-small">편집</button>
+										<button type="button" class="m-hidden gray-btn btn-small">편집</button>
 										<button type="button" class="hidden gray-btn btn-small">메시지발송</button>
 									</div>
 									<li><span>작업자명</span>홍길동</li>
@@ -160,7 +160,7 @@
 									<li><span>안전지수</span>23</li>
 									<li><span>현재위치</span>H23 <div class="dot red mgl1"></div>위험구역 <button type="button" class="m-hidden mgl1 line-gray-btn btn-small">실시간 영상</button></li>
 									<li><span>주시설정</span>
-										<button type="button" class="red-btn btn-small">주시설정<span class="state_onoff">on</span></button>
+										<button type="button" class="second-btn btn-small">주시설정</button><!--07/08 주시설정 버튼 유형(toggle on:red-btn, off:second-btn) 변경 -->
 									</li>
 									<li class="w100">
 										<span>작업내용</span>
@@ -170,6 +170,35 @@
 									</li>
 								</ul>
 							</div>
+							<!-- 07/08 작업자 상세정보 편집 유형 추가 --->
+							<div class="info__wrap full mgt2">
+								<ul class="col3">
+									<div class="d-flex j-content-between">
+										<div class="titTypeC">작업자 정보</div>
+										<button type="button" class="m-hidden gray-btn btn-small">저장</button>
+										<button type="button" class="hidden gray-btn btn-small">메시지발송</button>
+									</div>
+									<li><span>작업자명</span>홍길동</li>
+									<li><span>작업자ID</span>12345</li>
+									<li><span>부서</span>
+										<select class="w50"><option>생산관리 2팀</option></select>
+									</li>
+									<li><span>안전지수</span>23</li>
+									<li><span>현재위치</span>H23 <button type="button" class="m-hidden mgl1 line-gray-btn btn-small">실시간 영상</button></li>
+									<li><span>주시설정</span>
+										<button type="button" class="red-btn btn-small">주시중</button>
+									</li>
+									<li class="w100">
+										<span>작업내용</span>
+										<select class="w20" style="margin-left: -5px;"><option>양생공정 1단계</option></select>
+										<select class="w20"><option>양생공정 1단계</option></select>
+										<select class="w20"><option>양생공정 1단계</option></select>
+										<button type="button" class="icon-plus line-gray-btn btn-small"></button>
+										<button type="button" class="icon-minus line-gray-btn btn-small"></button>
+									</li>
+								</ul>
+							</div>
+							
 							<!-- 개인정보--->
 							<div class="info__wrap full mgt2">
 								<ul class="col3">
@@ -178,11 +207,11 @@
 									<li><span>성별</span>남성</li>
 									<li><span>국가</span>대한민국</li>
 									<li><span>혈액형</span>A</li>
-									<li><span>주소</span>서울시 종로구 세종로</li>
 									<li><span>휴대전화번호</span>010-0000-0000</li>
 									<li><span>전화번호</span>02-0000-0000</li>
 									<li><span>비상연락망</span>선택안함</li>
 									<li><span>메일주소</span>id@example.com</li>
+									<li class="w100"><span>주소</span>서울시 종로구 세종로</li><!--07/08 항목위치 및 너비 변경 -->
 								</ul>
 							</div>
 							
@@ -292,7 +321,7 @@
 											<th>메시지 종류</th>
 											<th>발신자</th>
 											<th>발송내역</th>
-											<th>메시지</th>
+											<th style="width:30%">메시지</th>
 											<th>발신일</th>
 											<th>수신확인</th>
 										</tr>
