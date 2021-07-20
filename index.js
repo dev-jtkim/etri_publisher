@@ -43,7 +43,7 @@ function td (content) {
     }
     return td
 }
-
+/*
 htmlFiles.forEach(item => {
     const tr = document.createElement('tr')
 
@@ -62,7 +62,7 @@ htmlFiles.forEach(item => {
 
     tbody.appendChild(tr)
 })
-
+*/
 
 htmlCustomerFiles.forEach(item => {
     const tr = document.createElement('tr')
