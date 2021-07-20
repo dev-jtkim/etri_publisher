@@ -19,8 +19,9 @@ const htmlFiles = fs.readdirSync(htmlDir).filter(item => {
     }
 })
 
+
 const htmlCustomerFiles = fs.readdirSync(htmlCustomerDir).filter(item => {
-    return item.match(/.+\.html$/)
+    return item.match(/.+\.APP_html$/)
 }).map(name => {
     return {
         name,
