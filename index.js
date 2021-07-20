@@ -8,6 +8,8 @@ function info (name) {
 }
 
 const htmlDir = './html'
+const htmlCustomerDir = './APP_html'
+
 const htmlFiles = fs.readdirSync(htmlDir).filter(item => {
     return item.match(/.+\.html$/)
 }).map(name => {
@@ -16,6 +18,16 @@ const htmlFiles = fs.readdirSync(htmlDir).filter(item => {
         info: info(name)
     }
 })
+
+const htmlCustomerFiles = fs.readdirSync(htmlCustomerDir).filter(item => {
+    return item.match(/.+\.html$/)
+}).map(name => {
+    return {
+        name,
+        info: info(name)
+    }
+})
+
 const template = fs.readFileSync('./template.html')
 const dom = new JSDOM(template.toString())
 
@@ -33,7 +45,7 @@ function td (content) {
 
 htmlFiles.forEach(item => {
     const tr = document.createElement('tr')
-    
+
     const filename = td()
     const anchor = document.createElement('a')
     anchor.innerHTML = item.name
@@ -49,5 +61,26 @@ htmlFiles.forEach(item => {
 
     tbody.appendChild(tr)
 })
+
+
+htmlCustomerFiles.forEach(item => {
+    const tr = document.createElement('tr')
+
+    const filename = td()
+    const anchor = document.createElement('a')
+    anchor.innerHTML = item.name
+    anchor.setAttribute('href', `./html/${item.name}`)
+    filename.appendChild(anchor)
+
+    const format = 'YYYY/MM/DD hh:mm'
+
+    tr.appendChild(filename)
+    tr.appendChild(td( dayjs(item.info.ctime).format(format) ))
+    tr.appendChild(td( dayjs(item.info.mtime).format(format) ))
+    tr.appendChild(td( dayjs(item.info.birthtime).format(format) ))
+
+    tbody.appendChild(tr)
+})
+
 
 fs.writeFileSync(`./index.html`, dom.serialize())
