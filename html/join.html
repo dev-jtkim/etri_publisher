@@ -20,14 +20,10 @@
     </div>
     <h3 class="titTypeB">관리자등록</h3>
     <div class="join-form">
-        <ul class="col2">
+        <ul class="col2"><!-- 07/08 필드 순서 변경 -->
             <li>
                 <span>아이디</span>
                 <input type="text" placeholder="아이디를 입력하세요">
-            </li>
-            <li>
-                <span>이름</span>
-                <input type="text">
             </li>
             <li>
                 <span>비밀번호</span>
@@ -36,9 +32,19 @@
                     <a href="#" onclick="myFunction()" class="icon-password"></a><!-- 비밀번호 보이기 -->
                 </div>
             </li>
+			<li>
+                <span>이름</span>
+                <input type="text">
+            </li>
             <li>
                 <span>비밀번호 재확인</span>
                 <input type="password" placeholder="위에 입력한 비밀번호를 다시 한 번 입력하세요">
+            </li>
+			<li>
+                <span>부서 (파트)</span>
+                <select>
+                    <option>소속부서</option><option></option>
+                </select>
             </li>
             <li>
                 <span>이메일</span>
@@ -48,12 +54,6 @@
                         <option>직접입력</option><option>naver.com</option>
                     </select>
                 </div>
-            </li>
-            <li>
-                <span>부서 (파트)</span>
-                <select>
-                    <option>소속부서</option><option></option>
-                </select>
             </li>
             <li>
                 <span>직급</span>

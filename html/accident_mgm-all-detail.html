@@ -14,7 +14,7 @@
 <body>
 <div class="wrap">
 	<!-- header -->
-    <div class="header">
+    <div class="header m-hidden">
 		<div class="header__title">
 			<span>한국타이어 대전공장 안전관리시스템</span>
 		</div>
@@ -72,7 +72,7 @@
 		</div>
     </div>
 	
-	<div class="header__sub">
+	<div class="header__sub m-hidden">
 		<div class="f-left">
 			<span class="today">2021-06-01 월요일</span>
 			<span class="noday">무재해 <strong>71</strong>일</span>
@@ -191,28 +191,27 @@
                     <div class="divide mgt2">
                         <div class="titTypeB">사고정보</div>
                         <div class="d-flex j-content-between">
-							<!-- 긴급사고 상세정보--->
+							<!-- 07/08 긴급사고 상세정보 : 항목 순서와 정렬 변경(slack 6월 22일 요청사항 참조) --->
                             <div class="info__wrap full mgt2">
                                 <ul class="col2">
                                     <div class="d-flex j-content-between">
                                         <div class="titTypeC">{{사고ID}} 21/04/05 12:00:00 <span class="emergency">중대재해</span></div>
                                         <button onclick="document.getElementById('layerPop').style.display='block'" type="button" class="m-hidden gray-btn btn-small">동일사고찾기</button>
                                     </div>
-                                    <li class="w100"><span>위치</span>H-23 
-										<button type="button" class="red-btn btn-small">위험구역<span class="state_onoff">on</span></button>
+                                    <li><span>위치</span>H-23 
+										<button type="button" class="red-btn btn-small">위험구역</button>
 									</li>
-                                    <li class="w100"><span>운영기기</span><a href="#" class="underline">지게차-ID</a></li>
+                                    <li><span>운영기기</span><a href="#" class="underline">지게차-ID</a></li>
                                     <li><span>내용</span>지게차 충돌</li>
                                     <li><span>구역 안전지수</span>23</li>
-									<li><span>조치상태</span><button type="button" class="line-gray-btn btn-small">작성하기</button></li>
-									<li class="m-hidden">
-										<span>보고서 작성상태</span><button type="button" class="line-gray-btn btn-small">파일등록</button>
-									</li>
-                                    <li class="w100"><span>사고처리자</span>
-										<button type="button" class="line-gray-btn btn-small" style="margin-left: -4px">처리하기</button>
+									<li><span>사고처리자</span>
+										<button type="button" class="line-gray-btn btn-small" style="margin-left: -5px">처리하기</button>
                                         <button type="button" onclick="document.getElementById('layerPop2').style.display='block'" class="icon-search line-gray-btn btn-small">검색</button>
                                     </li>
-                                    
+									<li><span>조치상태</span><button type="button" class="line-gray-btn btn-small">작성하기</button></li>
+									<li class="m-hidden">
+										<span>처리보고서</span><button type="button" class="line-gray-btn btn-small">파일등록</button>
+									</li>
                                 </ul>
                             </div>
                             <div class="info__wrap mgt2">
@@ -222,8 +221,8 @@
 										<button type="button" class="m-hidden gray-btn btn-small">메시지 발송</button>
 									</div>
                                     <li><span>작업자명</span><a href="#" class="underline">홍길동</a></li>
-                                    <li><span class="m-hidden">작업자ID</span>1203</li>
-                                    <li><span>주시설정</span><button type="button" class="second-btn btn-small">주시중<span class="state_onoff">off</span></button></li>
+                                    <li class="m-hidden"><span>작업자ID</span>1203</li>
+                                    <li><span>주시설정</span><button type="button" class="second-btn btn-small">주시중 설정</button></li>
                                     <li><span>혈액형</span>AB</li>
                                     <li><span>체온</span>36.2℃</li>
                                     <li><span>맥박</span><strong class="emergency">102</strong></li>

@@ -9,22 +9,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/custom.css">	
-        <!-- Demo styles -->
-        <style>
-      
-            .swiper-container {
-              width: 100%;
-              height: 100%;
-            }
-      
-            
-            .swiper-slide img {
-              display: block;
-              width: 100%;
-              height: 100%;
-              object-fit: cover;
-            }
-          </style>
 </head>
 
 <body class="dashboard__section">
@@ -330,30 +314,16 @@
                                     </div>
                                 </div>
 
-                                <!-- Swiper :: vod-->
+                                <!--07/08 카메라 영상 1개만 노출시 vod : iframe 높이 height="170" -->
                                 <div class="conveyer-vod">
-                                    <div class="swiper-container dashboard-vod">
-                                        <div class="swiper-wrapper">
-                                            <div class="swiper-slide">
-                                                <div class="vod-set">
-                                                    <h4>운영기기 카메라 ID (이름)</h4>
-                                                    <iframe width="100%" height="150" src="https://www.youtube.com/embed/gmp1W6TrbmE?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-wrapper">
-                                            <div class="swiper-slide">
-                                                <div class="vod-set">
-                                                    <h4>운영기기 카메라 ID (이름)</h4>
-                                                    <iframe width="100%" height="150" src="https://www.youtube.com/embed/gmp1W6TrbmE?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-button-next"></div>
-                                        <div class="swiper-button-prev"></div>
-                                        <div class="swiper-pagination"></div>
+                                    <div class="dashboard-vod w100">
+										<div class="vod-set">
+											<h4>운영기기 카메라 ID (이름)</h4>
+											<iframe width="100%" height="170" src="https://www.youtube.com/embed/gmp1W6TrbmE?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+										</div>
                                     </div>
                                 </div>
+								<!-- // 카메라 영상 1개만 노출시 vod-->
                             </li>
                             <li>
                                 <div class="conveyer-info">
