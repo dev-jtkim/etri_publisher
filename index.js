@@ -21,7 +21,7 @@ const htmlFiles = fs.readdirSync(htmlDir).filter(item => {
 
 
 const htmlCustomerFiles = fs.readdirSync(htmlCustomerDir).filter(item => {
-    return item.match(/.+\.APP_html$/)
+    return item.match(/.+\.html$/)
 }).map(name => {
     return {
         name,
@@ -43,7 +43,7 @@ function td (content) {
     }
     return td
 }
-/*
+
 htmlFiles.forEach(item => {
     const tr = document.createElement('tr')
 
@@ -62,7 +62,7 @@ htmlFiles.forEach(item => {
 
     tbody.appendChild(tr)
 })
-*/
+
 
 htmlCustomerFiles.forEach(item => {
     const tr = document.createElement('tr')
